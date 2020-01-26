@@ -37,7 +37,7 @@ public class StudentServiceFacade {
 			@RequestParam Optional<Integer> pageNumber , @RequestParam Optional<Integer> number
 			,@RequestParam Optional<String> sortBy){
 		return studentRepo.findStudentByFirstNameOrLastName(searchName.orElse("_") , searchName.orElse("_") ,PageRequest.of(pageNumber.orElse(0),
-				number.orElse(20) ,Sort.Direction.ASC , sortBy.orElse("id")));
+				number.orElse(10) ,Sort.Direction.ASC , sortBy.orElse("id")));
 	}
 	@GetMapping(path = "/{id}")
 	public Optional<Student> getStudent(@PathVariable(name = "id" ) Long id) {

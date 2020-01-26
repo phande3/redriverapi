@@ -25,32 +25,17 @@ public class RedRiverapiApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 		 for(int i=0 ; i< 10; i++){
 		    	Student std = new Student();
-		        std.setFirstName("firstName- " + i);
-		        std.setLastName("lastName - "+i);
+		        std.setFirstName("testfirstName- " + i);
+		        std.setLastName("testlastName - "+i);
 		        std.setDob(LocalDate.now());
-		        std.setGrade("First");
+		        std.setGrade("First Year");
+		        std.setEmail("test"+i+"@test.com");
+		        std.setAddress("test address , Austin , TX , 78749");
+		        std.setPhone("1111111111");
 		        std.setGender(Math.random()%2==1?"Male":"Female");
 		        repository.save(std);
 		    }
     }
 	
-//	public class PopulateStudentDataRunner implements CommandLineRunner {
-//		@Override
-//		public void run(String... args) throws Exception {
-//			 for(int i=0 ; i< 10000; i++){
-//			    	Student std = new Student();
-//			        std.setFirstName("firstName- " + i);
-//			        std.setLastName("lastName - "+i);
-//			        std.setDob(LocalDate.now());
-//			        std.setGrade("First");
-//			        std.setFirstName("Male");
-//			        repository.save(std);
-//			    }
-//		}
-//	}
-	//	@InitBinder
-//    public void initBinder(WebDataBinder binder) {
-//        CustomDateEditor editor = new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true);
-//        binder.registerCustomEditor(Date.class, editor);
-//    }
+
 }
